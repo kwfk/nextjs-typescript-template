@@ -31,9 +31,12 @@ module.exports = {
     'prettier/prettier': 'error',
     // Typescript
     '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@typescript-eslint/explicit-function-return-type': {
-      allowExpressions: true,
-    },
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      {
+        allowExpressions: true,
+      },
+    ],
     // React
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/prop-types': ['off', {}],
@@ -63,8 +66,8 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
+        moduleDirectory: ['node_modules', '.'],
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
-        // moduleDirectory: ["node_modules", "."],
       },
     },
     'import/extensions': ['.js', '.ts', '.mjs', '.jsx', '.tsx'],
